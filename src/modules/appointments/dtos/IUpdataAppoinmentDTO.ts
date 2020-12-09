@@ -1,6 +1,6 @@
+import { PartialRequireOne } from '@shared/helpers/types/PartialRequireOne';
 import IAppointmentDTO from './IAppointmentDTO';
 
-type IUpdateAppointmentDTO = Partial<Omit<IAppointmentDTO, 'id'>> &
-  Pick<IAppointmentDTO, 'id'>;
+type IUpdateAppointmentDTO = PartialRequireOne<IAppointmentDTO, 'id'>;
 
 export default IUpdateAppointmentDTO;
