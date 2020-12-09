@@ -1,3 +1,5 @@
+import { uuid } from 'uuidv4';
+
 import IAppointmentDTO from '@modules/appointments/dtos/IAppointmentDTO';
 
 class Appointment {
@@ -11,7 +13,13 @@ class Appointment {
 
   private state: 'scheduled' | 'closed' | 'canceled';
 
-  constructor({ id, address, patientName, dateTime, state }: IAppointmentDTO) {
+  constructor({
+    id = uuid(),
+    address,
+    patientName,
+    dateTime,
+    state,
+  }: IAppointmentDTO) {
     this.id = id;
     this.address = address;
     this.patientName = patientName;
