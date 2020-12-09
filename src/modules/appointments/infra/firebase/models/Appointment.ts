@@ -3,15 +3,15 @@ import { uuid } from 'uuidv4';
 import IAppointmentDTO from '@modules/appointments/dtos/IAppointmentDTO';
 
 class Appointment {
-  private id: string;
+  private _id: string;
 
-  private address: string;
+  private _address: string;
 
-  private patientName: string;
+  private _patientName: string;
 
-  private dateTime: string;
+  private _dateTime: string;
 
-  private state: 'scheduled' | 'closed' | 'canceled';
+  private _state: 'scheduled' | 'closed' | 'canceled';
 
   constructor({
     id = uuid(),
@@ -20,35 +20,36 @@ class Appointment {
     dateTime,
     state,
   }: IAppointmentDTO) {
-    this.id = id;
-    this.address = address;
-    this.patientName = patientName;
-    this.dateTime = dateTime;
-    this.state = state;
+    this._id = id;
+    this._address = address;
+    this._patientName = patientName;
+    this._dateTime = dateTime;
+    this._state = state;
   }
 
-  get appoinment(): Partial<IAppointmentDTO> {
+  get id(): string {
+    return this._id;
+  }
+
+  get properties(): Omit<IAppointmentDTO, 'id'> {
     return {
-      id: this.id,
-      address: this.address,
-      patientName: this.patientName,
-      dateTime: this.dateTime,
-      state: this.state,
+      address: this._address,
+      patientName: this._patientName,
+      dateTime: this._dateTime,
+      state: this._state,
     };
   }
 
-  set appoinment({
-    id,
+  set properties({
     address,
     patientName,
     dateTime,
     state,
-  }: Partial<IAppointmentDTO>) {
-    if (id) this.id = id;
-    if (address) this.address = address;
-    if (patientName) this.patientName = patientName;
-    if (dateTime) this.dateTime = dateTime;
-    if (state) this.state = state;
+  }: Omit<IAppointmentDTO, 'id'>) {
+    if (address) this._address = address;
+    if (patientName) this._patientName = patientName;
+    if (dateTime) this._dateTime = dateTime;
+    if (state) this._state = state;
   }
 }
 
