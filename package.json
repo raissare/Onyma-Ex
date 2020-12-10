@@ -6,7 +6,7 @@
   "author": "Lucas Yuri",
   "license": "MIT",
   "scripts": {
-    "dev:server": "ts-node-dev --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
+    "dev:server": "ts-node-dev -r tsconfig-paths/register --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
     "build": "tsc"
   },
   "devDependencies": {
@@ -24,6 +24,7 @@
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
     "ts-node-dev": "^1.0.0",
+    "tsconfig-paths": "^3.9.0",
     "typescript": "^4.0.5"
   },
   "dependencies": {
