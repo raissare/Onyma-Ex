@@ -3,7 +3,7 @@ import { inject, injectable } from 'tsyringe';
 
 import IAppointmentRepository from '@modules/appointments/repositories/IAppointmentsRepository';
 import IAppointmentDTO from '@modules/appointments/dtos/IAppointmentDTO';
-import IUpdateAppointmentDTO from '@modules/appointments/dtos/IUpdataAppoinmentDTO';
+import IUpdateAppointmentDTO from '@modules/appointments/dtos/IUpdateAppointmentDTO';
 
 @injectable()
 class UpdateAppointmentUseCase {

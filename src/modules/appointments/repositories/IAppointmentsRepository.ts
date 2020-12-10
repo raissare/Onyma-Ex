@@ -1,6 +1,6 @@
 import IAppointmentDTO from '../dtos/IAppointmentDTO';
 import ICreateAppointmentDTO from '../dtos/ICreateAppointmentDTO';
-import IUpdateAppointmentDTO from '../dtos/IUpdataAppoinmentDTO';
+import IUpdateAppointmentDTO from '../dtos/IUpdateAppointmentDTO';
 
 export default interface IAppointmentsRepository {
   create(data: ICreateAppointmentDTO): Promise<IAppointmentDTO>;

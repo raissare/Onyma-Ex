@@ -3,7 +3,7 @@ import IAppointmentDTO from '@modules/appointments/dtos/IAppointmentDTO';
 
 import IAppointmentsRepository from '@modules/appointments/repositories/IAppointmentsRepository';
 import ICreateAppointmentDTO from '@modules/appointments/dtos/ICreateAppointmentDTO';
-import IUpdateAppointmentDTO from '@modules/appointments/dtos/IUpdataAppoinmentDTO';
+import IUpdateAppointmentDTO from '@modules/appointments/dtos/IUpdateAppointmentDTO';
 
 class FakeAppointmentsRepository implements IAppointmentsRepository {
   private appointments: IAppointmentDTO[] = [];
