@@ -55,29 +55,29 @@ class Appointment {
   static update(
     appointment: Partial<Omit<IAppointmentDTO, 'id'>>,
   ): Partial<Omit<IAppointmentDTO, 'id'>> {
-    let update_appointemnt = {};
+    let update_appointment = {};
     if (appointment.address)
-      update_appointemnt = {
-        ...update_appointemnt,
+      update_appointment = {
+        ...update_appointment,
         address: appointment.address,
       };
     if (appointment.patientName)
-      update_appointemnt = {
-        ...update_appointemnt,
+      update_appointment = {
+        ...update_appointment,
         patientName: appointment.patientName,
       };
     if (appointment.dateTime)
-      update_appointemnt = {
-        ...update_appointemnt,
+      update_appointment = {
+        ...update_appointment,
         dateTime: appointment.dateTime,
       };
     if (appointment.state)
-      update_appointemnt = {
-        ...update_appointemnt,
+      update_appointment = {
+        ...update_appointment,
         state: appointment.state,
       };
 
-    return update_appointemnt;
+    return update_appointment;
   }
 }
 

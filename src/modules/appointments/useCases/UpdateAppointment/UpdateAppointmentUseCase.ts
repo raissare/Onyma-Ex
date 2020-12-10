@@ -13,31 +13,31 @@ class UpdateAppointmentUseCase {
   ) {}
 
   async execute(data: IUpdateAppointmentDTO): Promise<IAppointmentDTO> {
-    let update_appointemnt: IUpdateAppointmentDTO = { id: data.id };
+    let update_appointment: IUpdateAppointmentDTO = { id: data.id };
 
     if (data.address)
-      update_appointemnt = {
-        ...update_appointemnt,
+      update_appointment = {
+        ...update_appointment,
         address: data.address,
       };
     if (data.patientName)
-      update_appointemnt = {
-        ...update_appointemnt,
+      update_appointment = {
+        ...update_appointment,
         patientName: data.patientName,
       };
     if (data.dateTime)
-      update_appointemnt = {
-        ...update_appointemnt,
+      update_appointment = {
+        ...update_appointment,
         dateTime: data.dateTime,
       };
     if (data.state)
-      update_appointemnt = {
-        ...update_appointemnt,
+      update_appointment = {
+        ...update_appointment,
         state: data.state,
       };
 
     const appointment = await this.appointmentsRepository.update(
-      update_appointemnt,
+      update_appointment,
     );
 
     return appointment;
