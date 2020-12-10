@@ -57,7 +57,9 @@ class FakeAppointmentsRepository implements IAppointmentsRepository {
   }
 
   public async delete(id: string): Promise<void> {
-    this.appointments.filter(appointment => appointment.id !== id);
+    this.appointments = this.appointments.filter(
+      appointment => appointment.id !== id,
+    );
   }
 }
 
