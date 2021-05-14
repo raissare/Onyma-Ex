@@ -5,7 +5,9 @@ Before each commit and push, tests are automatically running to guarantee the pr
 
 ### Get Starting
 
-You should have [docker](https://www.docker.com/) instaled
+#### Basic
+
+You should have [NodeJs](https://nodejs.org/en/) installed
 You should have [firebase](https://console.firebase.google.com/) account and a real time data base running
 
 - Clone the project:
@@ -14,10 +16,26 @@ git clone https://github.com/Luryy/Onyma-Appointments.git
 cd Onyma-Appointments
 ```
 
-- Create a **.env** file:
+- Create a **.env** file: _*here you should use your firebase project account info_
 ```
 COPY the .env.example and fill the fields
 ```
+
+- Install the dependencies
+```
+npm install
+```
+
+- Run the project
+```
+npm run dev:server
+```
+
+#### Docker
+
+You should have [docker](https://www.docker.com/) instaled
+
+> This is an additional option, you could run this application with docker following the steps below.
 
 - Create a docker image
 ```
@@ -50,6 +68,17 @@ The aplicacation have 5 routes:
 }
 ```
 
+#### Additional info
+
+**To run tests**
+```
+npm run test
+```
+**To compile to JS**
+```
+npm run build
+```
+
 
 ### Projec Structure
 
@@ -68,8 +97,6 @@ Here is the project structure:
 │   │       │   └── IUpdateAppointmentDTO.ts
 │   │       ├── infra
 │   │       │   ├── firebase
-│   │       │   │   ├── models
-│   │       │   │   │   └── Appointment.ts
 │   │       │   │   └── repositories
 │   │       │   │       └── AppointmentsRepository.ts
 │   │       │   └── http
