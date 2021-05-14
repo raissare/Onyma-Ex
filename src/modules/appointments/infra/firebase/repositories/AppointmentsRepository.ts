@@ -7,7 +7,6 @@ import IAppointmentDTO from '@modules/appointments/dtos/IAppointmentDTO';
 import IAppointmentsRepository from '@modules/appointments/repositories/IAppointmentsRepository';
 import ICreateAppointmentDTO from '@modules/appointments/dtos/ICreateAppointmentDTO';
 import IUpdateAppointmentDTO from '@modules/appointments/dtos/IUpdateAppointmentDTO';
-import Appointment from '../models/Appointment';
 
 class AppointmentsRepository implements IAppointmentsRepository {
   private database: firebase.database.Database;
@@ -25,16 +24,14 @@ class AppointmentsRepository implements IAppointmentsRepository {
     dateTime,
     state,
   }: ICreateAppointmentDTO): Promise<IAppointmentDTO> {
-    const appointment = new Appointment({
-      id: uuid(),
+    const id  = uuid();
+    const data = {
+      id,
       address,
       patientName,
       dateTime,
       state,
-    });
-
-    const { id } = appointment;
-    const data = appointment.properties;
+    };
 
     await this.database.ref(this.url + id).set(data);
 
@@ -78,11 +75,10 @@ class AppointmentsRepository implements IAppointmentsRepository {
     appointment: IUpdateAppointmentDTO,
   ): Promise<IAppointmentDTO> {
     const { id } = appointment;
-    const data = Appointment.update(appointment);
 
-    await this.database.ref(this.url + id).update(data);
+    await this.database.ref(this.url + id).update(appointment);
 
-    return Object.assign(data, { id }) as IAppointmentDTO;
+    return Object.assign(appointment, { id }) as IAppointmentDTO;
   }
 
   public async delete(id: string): Promise<void> {
