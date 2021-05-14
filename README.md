@@ -1,4 +1,4 @@
-<h1 align="center">Onyma Appointments :diamond_shape_with_a_dot_inside: </h1>
+<h1 align="center">Onyma Backend Exercise :diamond_shape_with_a_dot_inside: </h1>
 
 _This project have simple **CRUD** implementation, but a great and scalable architecture.
 Before each commit and push, tests are automatically running to guarantee the project security_
@@ -12,8 +12,8 @@ You should have [firebase](https://console.firebase.google.com/) account and a r
 
 - Clone the project:
 ```
-git clone https://github.com/Luryy/Onyma-Appointments.git
-cd Onyma-Appointments
+git clone https://github.com/Health-Inn/Onyma-Backend-Ex.git
+cd Onyma-Backend-Ex
 ```
 
 - Create a **.env** file: _*here you should use your firebase project account info_
