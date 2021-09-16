@@ -7,16 +7,25 @@
     "strict": true,
     "strictPropertyInitialization": false,
     "baseUrl": "./src",
-    "allowJs": true,
+    "allowJs": false,
     "paths": {
-      "@modules/*": ["modules/*"],
-      "@config/*": ["config/*"],
-      "@shared/*": ["shared/*"]
+      "@modules/*": [
+        "modules/*"
+      ],
+      "@config/*": [
+        "config/*"
+      ],
+      "@shared/*": [
+        "shared/*"
+      ]
     },
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "forceConsistentCasingInFileNames": true
   },
-  "exclude": ["node_modules", "**/*.config.js"]
+  "exclude": [
+    "node_modules",
+    "**/*.config.js"
+  ]
 }
